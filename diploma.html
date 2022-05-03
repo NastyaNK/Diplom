@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="layout.css">
+<style>
+    body {
+        background-color: #cc93a4;
+    }
+</style>
+<div class="mod">
+    <h1 class="vxod">Вход</h1>
+    <div class="form">
+        <input type="text" placeholder="Почта">
+    </div>
+    <div class="form">
+        <input type="password" placeholder="Пароль">
+    </div>
+    <div class="form">
+        <input id="id" type="submit" value="Зарегистрироваться">
+    </div>
+    <div class="form">
+        <input id="id" type="submit" value="Войти">
+    </div>
+    <a href="#popap" class="forger" onclick="pop()">Забыли пароль?</a>
+</div>
+<div id="popap" class="modal">
+    <div class="modal-okno">
+        <button id="clos" class="close" onclick="pop1()">x</button>
+        <div class="form">
+            <input type="text" placeholder="Почта">
+        </div>
+        <div class="form">
+            <input type="password" placeholder="Новый пароль">
+        </div>
+        <div class="form">
+            <input id="id" type="submit" value="Сменить">
+        </div>
+    </div>
+    <div class="overlay"></div>
+</div>
+<script>
+    function pop() {
+        document.getElementById("popap").style.display = "block";
+    }
+    function pop1() {
+        document.getElementById("popap").style.display = "none";
+    }
+</script>

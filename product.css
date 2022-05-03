@@ -1,0 +1,100 @@
+.table{
+  width: 100%;
+  height: 40%;
+}
+.product{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background-color: cadetblue;
+  padding: 0;
+}
+.tovar{
+  width: 100%;
+height: 100%;
+margin: 0;
+padding: 0;
+background-color: coral;
+left: 30%;
+top: 0;
+}
+.product1{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background-color: blue;
+  padding: 0;
+  right: 0;
+  top: 0;
+}
+*{
+  margin: 0;
+  padding: 0;
+}
+.ad{
+  height: 300px;
+}
+.ad1{
+height: 300px;
+right: 0;
+}
+.text{
+  font-family: 'Monotype Corsiva',cursive;
+  font-size: 38px;
+  text-align: center;
+  width: 100%;
+  bottom: 0;
+  top: 0;
+}
+.name{
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+.stroka{
+  width: 100%;
+  height: 5%;
+  background-color: crimson;
+}
+.setka_korzina {
+  width: 100%;
+  height: 100%;
+  background-color: seagreen
+}
+
+.korzina-td {
+  vertical-align: top;
+  width: 20%;
+}
+
+.korzina {
+  width: 100%;
+  min-height: 200px;
+  background-color: brown
+}
+
+.setka-td {
+  vertical-align: top;
+  width: 100%;
+}
+
+.setka {
+  width: 100%;
+  background-color: cornflowerblue;
+}
+
+.img {
+  width: 240px;
+  height: 385px;
+  margin: 15px;
+  background-color: chartreuse;
+}
+
+.set {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  justify-items: center;
+  width: 100%;
+  height: 100%;
+}

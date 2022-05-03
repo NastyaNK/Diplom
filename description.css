@@ -1,0 +1,132 @@
+.case {
+    width: 645px;
+    height: 325px;
+    /*background-color:  aqua;*/
+    box-shadow: 0 0 15px, inset 130px 0 gold;
+    position: relative;
+}
+
+.img {
+    width: 200px;
+    margin-left: 40px;
+    position: relative;
+}
+
+.data {
+    font-family: 'Monotype Corsiva', cursive;
+    font-size: 18px;
+    text-align: center;
+}
+
+blink {
+    animation: blinker 0.6s linear infinite;
+    color: black
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
+
+.blink-one {
+    animation: blinker-one 1s linear infinite;
+}
+
+@keyframes blinker-one {
+    0% {
+        opacity: 0;
+    }
+}
+
+.blink-two {
+    animation: blinker-two 1.4s linear infinite;
+}
+
+@keyframes blinker-two {
+    100% {
+        opacity: 0;
+    }
+}
+
+.name {
+    font-size: 25px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    font-family: 'Monotype Corsiva', cursive;
+}
+
+.description {
+    position: relative;
+    font-family: 'Monotype Corsiva', cursive;
+    font-size: 18px;
+}
+
+.caseone {
+    height: 30px;
+    /*background-color: gold;*/
+    margin-left: auto;
+    position: absolute;
+    left: 245px;
+    right: 0;
+    top: 0;
+}
+
+.casetwo {
+    width: 245px;
+    height: 325px;
+    /*background-color: greenyellow;*/
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: all 0.6s ease;
+}
+
+.casethree {
+    height: 295px;
+    width: 400px;
+    /*background-color: indigo;*/
+    position: relative;
+    transform: translateY(10%);
+}
+
+#buttons div {
+    display: inline-block;
+    padding: 5px;
+    position: relative;
+    cursor: pointer;
+    font-family: 'Monotype Corsiva', cursive;
+    font-size: 18px;
+    width: 30%;
+    text-align: center;
+}
+
+#buttons {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#buttons div.active::before {
+    border-bottom-color: tomato;
+    width: 100%;
+}
+
+#buttons div:hover:before {
+    border-bottom-color: tomato;
+    width: 100%;
+}
+
+#buttons div:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0 auto;
+    width: 0%;
+    border-bottom: 2px solid transparent;
+    transition: all 0.6s;
+}

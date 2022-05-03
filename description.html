@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="description.css">
+
+    <script src="./scripts/main.js"></script>
+    <script src="./scripts/image-slider.js"></script>
+    <link rel="stylesheet" href="./styles/image-slider.css">
+
+    <style>
+        .slider {
+            transform: translateY(-50%);
+            padding-top: 50%;
+            width: 225px;
+        }
+        
+        .slider-image img {
+            display: none;
+        }
+        
+        .slider-image {
+            display: block;
+            border-radius: 15px;
+            background-color: #eeeeee;
+            border: 1px solid #999999;
+            width: 10px;
+            height: 10px;
+            transition: all 0.5s;
+        }
+        
+        .slider-image.slider-image-active {
+            background-color: darkgrey;
+            border: 1px solid darkgrey;
+            transition: all 0.5s;
+        }
+        
+        #items {
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        
+        #items .slider-image-active .slider-image-selector {
+            display: none;
+        }
+        
+        #image-items {
+            position: relative;
+        }
+        
+        #big-image {
+            max-height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="case">
+        <div class="caseone">
+            <div class="name">
+                Цветок женское счастье
+            </div>
+            <div class="casethree">
+                <div id="buttons" class="button">
+                    <div class="one">Описание</div>
+                    <div class="two">Вопрос-ответ</div>
+                    <div class="three">ВАЖНО!</div>
+                </div>
+                <div id="contents">
+                    <div class="description">
+                        Состав:<br> Спатифиллум
+                        <br> Керамический горшок
+                    </div>
+                    <div class="description">
+                        Здесь должны быть вопросы от заказчика и ответы
+                    </div>
+                    <div class="description">
+                        Необходимо знать, что цветок Спатифиллум относится к ядовитым растениям. Его листья содержит оксалат кальция, который при попадании на слизистые человека может вызвать раздражение желудка и воспаление глаз. От этого вещества начинает печь во рту, выделяется
+                        слюна, может даже появиться жжение в органах дыхания. Рекомендуем при работе с цветком надевать на руки перчатки или после работы хорошо помыть руки с мылом.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider" onload="centering(this, document.querySelector('.caseone'), 5);">
+            <div id="big-image-container">
+                <div id="image-items">
+                    <img id="big-image" onload="centering(items, this, 5);">
+                    <div id="items">
+
+                    </div>
+                    <div class="data">
+                        <blink>22.08.22 &#10071;</blink>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script>
+        add_switcher = (buttons, contents) => {
+            let btns = buttons.children;
+            let ctns = contents.children;
+            for (let i = 0; i < btns.length; i++) {
+                btns[i].onclick = () => {
+                    for (let j = 0; j < ctns.length; j++) {
+                        if (i == j) {
+                            btns[j].classList.add("active");
+                        } else {
+                            btns[j].classList.remove("active");
+                        }
+                        ctns[j].hidden = i != j;
+                    }
+                }
+            }
+            btns[0].onclick();
+        }
+
+        let xSlider;
+        let path = "images/";
+        let imgs = ["flower.jpg", "flowertwo.jpg", "flowerthree.png", "flowerfour.png", "flowerfive.png"];
+        let template = "<div class='slider-image'><img forslider src='{image}'><div class='slider-image-selector'></div></div>";
+        on_loads.push(() => {
+            xSlider = new ImageSlider("xSlider", "items", "big-image", template);
+            imgs.forEach((img) => xSlider.add_image(path + img));
+        });
+
+        on_loads.push(() => {
+            add_switcher(buttons, contents);
+            add_switcher(navigation, images);
+        });
+    </script>
+</body>
+
+</html>
